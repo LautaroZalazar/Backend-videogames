@@ -6,14 +6,7 @@ const createdplatforms = mongoose.model(
   new mongoose.Schema({
     name: {
       type: String,
-      required,
-    },
-    image: {
-      type: String,
-      required,
-    },
-    requirements_en: {
-      type: String,
+      required: false,
     }
   })
 );

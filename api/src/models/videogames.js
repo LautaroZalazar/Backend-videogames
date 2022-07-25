@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+// const Genres = mongoose.model('Genres')
+// const Platforms = mongoose.model('Platforms')
 
 // Created
 const createdvideo = mongoose.model(
@@ -6,32 +8,54 @@ const createdvideo = mongoose.model(
   new mongoose.Schema({
     name: {
       type: String,
-      required,
+      required: false
     },
     released: {
       type: String,
-      required,
-    },
-    date: {
-      type: Date,
-      required,
+      required: false
     },
     image: {
       type: String,
-      required,
+      required: false
     },
     rating: {
       type: Number,
-      required,
+      required: false
     },
-    reviews: {
+    reviewsapi: {
       type: Array,
-      required,
+      required: false
     },
     stores: {
       type: Array,
-      required,
+      required: false
     },
+    genresapi:{
+      type:Array,
+      required: false
+    },
+    platformsapi:{
+      type:Array,
+      required: false
+    },
+    genres: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Genres"
+      },
+    ],
+    platforms: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Platforms"
+      },
+    ],
+    reviews: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Reviews"
+      }
+    ]
   })
 );
 

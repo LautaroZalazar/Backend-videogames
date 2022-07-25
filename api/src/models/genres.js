@@ -6,7 +6,7 @@ const createdgenres = mongoose.model(
   new mongoose.Schema({
     name: {
       type: String,
-      required,
+      required: false,
     },
   })
 );
