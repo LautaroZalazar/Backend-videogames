@@ -4,13 +4,11 @@ const getAll = async (req, res) => {
   const {name} = req.query
   try {
     if(name){
-      console.log(name);
     let vg = await Videogames.find({"name": new RegExp(".*" + name + ".*", "i")})
       .populate({ path: "genres", select: "name" })
       .populate({ path: "platforms", select: "name" })
       .populate({ path: "reviews", select: "review rating" })
-      if(vg){
-        console.log(vg);
+      if(vg[0]){
         res.send(vg)
       } else{
         res.send("Videogame is not found")
