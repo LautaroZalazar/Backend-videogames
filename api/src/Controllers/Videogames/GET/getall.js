@@ -5,7 +5,7 @@ const getAll = async (req, res) => {
   try {
     if(name){
       console.log(name);
-    let vg = await Videogames.find({"name": new RegExp( ".*" + name + ".*")})
+    let vg = await Videogames.find({"name": new RegExp(".*" + name + ".*", "i")})
       .populate({ path: "genres", select: "name" })
       .populate({ path: "platforms", select: "name" })
       .populate({ path: "reviews", select: "review rating" })
