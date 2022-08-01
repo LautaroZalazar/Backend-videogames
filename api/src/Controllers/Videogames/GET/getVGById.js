@@ -7,7 +7,8 @@ const getVGById = async (req, res) => {
         .populate({path: "genres", select: "name"})
         .populate({path: "platforms", select: "name"})
         .populate({path: "reviews", select: "review rating"})
-        if(vg){
+        
+        if(vg.name){
             res.json(vg)
         } else{
             res.status(404).send("Videogame does not exist")
