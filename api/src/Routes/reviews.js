@@ -6,6 +6,6 @@ const router = Router();
 
 router.get("/", getAllRV);
 
-router.post("/:id", postRV)
+router.post("/:id", postRV);
 
 export default router;
